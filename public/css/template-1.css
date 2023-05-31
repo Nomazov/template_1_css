@@ -1,3 +1,8 @@
+:root {
+    --text-color: green;
+    --space-medium: 24px;
+}
+
 .page {
     background: #FFFFFF; 
     padding: 0 15px;
@@ -71,21 +76,21 @@
 
 .footer-title {
     font-size: 20px;
-    color: #212529;
+    color: var(--text-color, #212529);
     display: block;
     margin-bottom: 12px;
 }
 
 .hero_title {
     font-size: 56px;
-    color: #212529;
+    color: var(--text-color, #212529);
     font-weight: 500;
     text-align: center;
 }
 
 .hero_text {
     font-size: 20px;
-     color: #212529;
+     color: var(--text-color, #212529);
      text-align: center;
     max-width: 585px;
     margin: 0 auto;
@@ -98,7 +103,7 @@
 .card-header {
     padding: 12px;
     font-size: 24px;
-    color: #212529;
+    color: var(--text-color, #212529);
     text-align: center;
 }
 
@@ -116,7 +121,7 @@
 
 .card_price_amount {
     font-size: 40px;
-    color: #212529;
+    color: var(--text-color, #212529);
 }
 
 .card_price_duration {
@@ -126,7 +131,7 @@
 
 .card_description_item {
     font-size: 16px;
-    color: #212529;
+    color: var(--text-color, #212529);
     display: block;
 }
 
@@ -139,4 +144,72 @@
     width: 100%;
     font-size: 19px;
     padding: 9px;
+}
+
+
+/* .page {
+   
+    background-image: url('/img/test2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
+.hero_text {
+    padding: 40px;
+    color: aqua;
+   border-image-source: url('/img/test2.jpg');
+   border-image-width: 10% 5%;
+   border-image-slice: 10% 5%;
+   border-image-outset: 60px;
+}
+
+.card_block {
+    /* list-style-type: upper-alpha; */
+    padding: 0;
+    list-style-position: inside;
+    list-style-image: linear-gradient(to bottom right, blue, red);
+
+}
+
+.card_description_item {
+    display: list-item;
+}
+
+/* .table tr {
+    border: 1px solid red;
+} */
+
+.table tr td {
+    border: 1px solid aqua;
+    border-bottom-color: red;
+    border-right-color: blueviolet;
+
+}
+
+.table {
+    table-layout: fixed;
+    width: 600px;
+    border-collapse: unset;
+    border-spacing: 20px 10px;
+
+    caption-side: top;
+
+    empty-cells: show;
+}
+
+.nav_link::before,
+.nav_link::after {
+
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.calc {
+    width: 600px;
+    margin: 0;
+    margin-left: calc(50% - (600px/2));
 }
