@@ -296,7 +296,7 @@
 
 .form_checkbox > label {
     color: var(--color-title);
-    font-size: var(--size-d);
+    font-size: var(--size-s);
     cursor: pointer;
 }
 
