@@ -1,0 +1,86 @@
+<header class="header ">
+    <div class="">
+        {{> logo}}
+    </div>
+    <nav class="header_nav">
+        <div class="header_nav_right">
+            {{> nav list=header}}
+        </div>
+    </nav>
+</header>
+
+<main class="main">
+    <div class="info">
+        {{#with info}}
+        <h1 class="info_title">{{title}}</h1>
+        <p class="info_text">{{description}}</p>
+        {{/with}}
+    </div>
+    <form class="form">
+        {{#with form}}
+        <div class="input_list">
+            {{#each inputs}}
+            <input type="{{type}}" placeholder="{{placeholder}}" name="{{name}}" id="form_{{id}}" class="form_input">
+            {{/each}}
+        </div>
+
+        <div class="form_checkbox">
+            {{#with checkbox}}
+            <input type="checkbox" class="checkbox" name="{{name}}" id="{{name}}">
+            <div></div>
+            <label for="{{name}}" id="{{name}}">{{label}}</label>
+            {{/with}}
+        </div>
+
+        <button class="form_button" type="submit">{{button}}</button>
+        <p class="form_info">{{info}}</p>
+        {{/with}}
+    </form>
+</main>
+
+<div class="updates">
+    {{#with updates}}
+    <strong class="uptades_title">{{title}}</strong>
+
+    {{#each list}}
+    <div class="updates_item">
+        <img src="/img/test2.jpg" alt="avatar" class="user_img">
+        <div>
+            <p class="user_name">@{{nickname}}</p>
+            <p class="list_description">{{description}}</p>
+        </div>
+    </div>
+    {{/each}}
+
+    <a href="{{show_all.url}}">{{show_all.text}}</a>
+
+    {{/with}}
+</div>
+
+<div class="expirience">
+    {{#with expirience}}
+    <h2 class="expirience_title">{{title}}</h2>
+    <div class="list_badge">{{badge}}</div>
+    <div class="expirience_list">
+        {{#each list}}
+        <div class="list_item">
+            <strong class="list_name">{{name}}</strong>
+            <p class="list_details">{{details}}</p>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
+
+<footer class="footer">
+    <div class="">
+        {{> logo}}
+        <span class="footer_copiright">Copyright 2023-2024</span>
+    </div>
+    {{#each footer}}
+    <div class="">
+        <span class="footer-title">{{title}}</span>
+        {{> nav list=links isVertical=true}}
+    </div>
+    {{/each}}
+</footer>
