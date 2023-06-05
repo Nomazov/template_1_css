@@ -27,17 +27,7 @@
     <h2 class="articles_title">Our Articles</h2>
     <div class="articles_list">
         {{#each articles}}
-        <div class="article" id="article-{{id}}">
-            <img src="{{photo}}" alt="{{name}}" class="article_photo">
-            <h3 class="article_title">{{name}}</h3>
-            <p class="article_text">{{description}}</p>
-            <a href="#">
-                <button class="article_button">Read All</button>
-            </a>
-            {{#if isNew}}
-            <div class="article_badge">new</div>
-            {{/if}}
-        </div>
+        {{> articleCardDark}}
         {{/each}}
     </div>
 </main>
