@@ -1,3 +1,11 @@
+@layer normalize, main, component, style;
+
+@layer style {
+    .card_button {
+        background: red;
+    }
+}
+
 @keyframes fly {
     from {
         top:0;
@@ -188,12 +196,12 @@
     line-height: 170%;
 }
 
-.blog {
+/* .blog {
     display: flex;
     gap: var(--space-b);
     padding: var(--space-b);
     border-bottom: 1px solid var(--border-color);
-}
+} */
 
 .card {
     display: flex;
@@ -222,25 +230,29 @@
     color: var(--color-text);
 }
 
-.button {
-    display: inline-block;
-    padding: var(--space-m) var(--space-xm);
-    text-decoration: none;
-    font-size: var(--size-d);
-    border-radius: var(--border-radius);
+@layer main {
+    .card_button {
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        transition: 1s;
+    }
+
+    .button {
+        display: inline-block;
+        padding: var(--space-m) var(--space-xm);
+        text-decoration: none;
+        font-size: var(--size-d);
+        border-radius: var(--border-radius);
+    }
+
+    .button:hover {
+        opacity: 0.8;
+        background-color: yellow;
+        color: #212529;
+    }
 }
 
-.card_button {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    transition: 1s;
-}
 
-.button:hover {
-    opacity: 0.8;
-    background-color: yellow;
-    color: #212529;
-}
 
 .form {
     display: flex;
@@ -380,3 +392,58 @@ body:hover .modal {
 :root {
     scroll-behavior: smooth;
 }
+
+.blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-b);
+    padding: var(--space-b);
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media all and (width <= 600px) {
+    .blog {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (600px < width <= 800px) {
+    .blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.form {
+    gap: var(--space-l)
+}
+
+@media all and (width <= 560px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .form_info {
+        max-width: 300px;
+        width: 100%;
+        line-height: 150%;
+    }
+
+    .form_content  {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.hero_container {
+    container-type: inline-size;
+    container-name: hero;
+}
+
+@container hero (width < 960px) {
+    .hero {
+        flex-direction: column;
+    }
+}
+
